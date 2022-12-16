@@ -1,0 +1,131 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    background-color: lavender;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+.container{
+    width: 350px;
+    display: flex;
+    flex-direction: column;
+}
+.title{
+    text-transform: capitalize;
+    margin-bottom: 0.5em;
+}
+.card{
+    position: relative;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    border: 2px solid black;
+    padding: 20px;
+    border-radius: 10px;
+    overflow: hidden;
+}
+.card::before{
+    content: '';
+    position: absolute;
+    inset: 0;
+    background-color: lightblue;
+    z-index: -1;
+    clip-path: circle(60% at 50% 0%);
+}
+.hp{
+    text-align: end;
+    align-self:flex-end;
+    background-color: white;
+    padding: 0.5em 2em;
+    border-radius: 50px;
+    text-transform: capitalize;
+}
+.img img{
+    width: 180px;
+    -webkit-user-drag: none;
+}
+.pokemonDetails{
+    width: 100%;
+}
+.pokemonDetails .name{
+    text-transform: capitalize;
+    font-size: 17px;
+    font-weight: bold;
+    margin: 1em 0;
+    text-align: center;
+}
+.type{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    padding: 1em;
+}
+.type span{
+    background-color: lightblue;
+    padding: 0.5em 2em;
+    border-radius: 50px;
+    text-transform: capitalize;
+}
+.details{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-top: 2em;
+}
+.details div{
+    text-align: center;
+}
+.details div span{
+    font-weight: bold;
+}
+#btn {
+    margin:  1.5em auto;
+  background: #fff;
+  border: none;
+  padding: 10px 20px;
+  display: inline-block;
+  font-size: 15px;
+  font-weight: 600;
+  width: 120px;
+  text-transform: uppercase;
+  cursor: pointer;
+  transform: skew(-21deg);
+}
+
+#btn span {
+  display: inline-block;
+  transform: skew(21deg);
+}
+
+#btn::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  right: 100%;
+  left: 0;
+  background: rgb(20, 20, 20);
+  opacity: 0;
+  z-index: -1;
+  transition: all 0.5s;
+}
+
+#btn:hover {
+  color: #fff;
+}
+
+#btn:hover::before {
+  left: 0;
+  right: 0;
+  opacity: 1;
+}
